@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+websockets
+deepgram-sdk
+elevenlabs
+langchain
+openai
+qdrant-client
+python-dotenv

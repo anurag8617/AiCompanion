@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+
+credentials.json
+token.json
+backend/credentials.json
+
+backend/vector_db/
+
+.env
+*.env
