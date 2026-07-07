@@ -33,7 +33,7 @@ interface VoiceAssistantScreenProps {
 export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHistory }: VoiceAssistantScreenProps) => {
   const [isAutoChat, setIsAutoChat] = useState<boolean>(true);
   const [status, setStatus] = useState<'idle' | 'listening' | 'processing' | 'speaking'>('idle');
-  const [aiResponse, setAiResponse] = useState<string>('Nova is ready to talk...');
+  const [aiResponse, setAiResponse] = useState<string>('Maaya is ready to talk...');
   const [conversationId, setConversationId] = useState<number | null>(null);
   const [volume, setVolume] = useState<number>(0);
   const isComponentMounted = useRef(true);
@@ -122,7 +122,7 @@ export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHisto
           PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
           {
             title: 'Microphone Permission',
-            message: 'Nova needs access to your microphone for voice chat.',
+            message: 'Maaya needs access to your microphone for voice chat.',
             buttonNeutral: 'Ask Me Later',
             buttonNegative: 'Cancel',
             buttonPositive: 'OK',
@@ -144,8 +144,8 @@ export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHisto
       let command = text;
       const lowerText = text.toLowerCase().trim();
 
-      if (lowerText.startsWith('nova')) {
-        command = text.replace(/nova/i, '').trim();
+      if (lowerText.startsWith('maaya')) {
+        command = text.replace(/maaya/i, '').trim();
         if (command.length === 0) {
           setStatus('speaking');
           const greeting = "Yes? I'm listening.";
@@ -208,7 +208,7 @@ export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHisto
       Tts.stop();
       await Voice.stop();
       setStatus('idle');
-      setAiResponse('Nova is ready.');
+      setAiResponse('Maaya is ready.');
       return;
     }
 
@@ -285,7 +285,7 @@ export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHisto
       <View style={[styles.header, { borderBottomColor: theme.border, backgroundColor: theme.background }]}>
         {/* Absolutely centered title so it doesn't affect flex layout of buttons */}
         {/* <View style={{ position: 'absolute', left: 0, right: 0, top: Platform.OS === 'ios' ? 60 : 40, bottom: 16, justifyContent: 'center', alignItems: 'center', zIndex: 0 }}>
-          <Text style={[styles.headerTitle, { color: theme.text }]}>Nova AI</Text>
+          <Text style={[styles.headerTitle, { color: theme.text }]}>Maaya AI</Text>
         </View> */}
 
         <View style={{ alignItems: 'flex-start', zIndex: 1 }}>
@@ -388,7 +388,7 @@ export const VoiceAssistantScreen = ({ user, theme, baseUrl, onBack, onOpenHisto
             animate={{ opacity: 1, translateY: 0 }}
             style={[styles.statusText, { color: theme.textSecondary }]}
           >
-            {status === 'idle' ? 'Ready to help' : status === 'listening' ? 'I\'m listening...' : status === 'processing' ? 'Thinking...' : 'Nova is speaking'}
+            {status === 'idle' ? 'Ready to help' : status === 'listening' ? 'I\'m listening...' : status === 'processing' ? 'Thinking...' : 'Maaya is speaking'}
           </MotiText>
         </View>
 

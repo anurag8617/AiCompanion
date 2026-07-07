@@ -143,7 +143,7 @@ export const MeetingAssistantScreen = ({ user, theme, baseUrl, onBack }: Meeting
       });
 
       if (response.data.status === 'success') {
-        Alert.alert('Analysis Complete', 'Nova has finished analyzing your meeting.');
+        Alert.alert('Analysis Complete', 'Maaya has finished analyzing your meeting.');
         fetchMeetings();
       }
     } catch (error) {

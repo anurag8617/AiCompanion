@@ -772,8 +772,8 @@ async function getGeminiCompletion(messages, userId, contextMemories) {
     contextString = "\n\nRELEVANT PAST MEMORIES:\n" + contextMemories.map(m => `- [${m.category}] ${m.content}`).join('\n');
   }
 
-  const systemInstruction = `You are Nova, a highly advanced AI Companion OS. 
-  Your name is Nova. Be helpful, intuitive, and proactive.
+  const systemInstruction = `You are Maaya, a highly advanced AI Companion OS. 
+  Your name is Maaya. Be helpful, intuitive, and proactive.
   ${contextString}
   
   IMPORTANT: You must respond in valid JSON format:
@@ -846,7 +846,7 @@ async function getAICompletion(messages, userId, contextMemories = [], iteration
     contextString = "\n\nRELEVANT PAST MEMORIES:\n" + contextMemories.map(m => `- [${m.category}] ${m.content}`).join('\n');
   }
 
-  const systemPrompt = `You are Nova, a highly advanced and proactive AI Companion Operating System. 
+  const systemPrompt = `You are Maaya, a highly advanced and proactive AI Companion Operating System. 
 You function as the user's executive assistant, memory engine, and communication intelligence platform.
 
 PERSONALITY:
@@ -1645,7 +1645,7 @@ app.get('/api/briefing/:userId', verifyToken, async (req, res) => {
     };
 
     const promptText = `Generate a crisp, professional, and confident "Morning Intel Briefing" for the user based on these recent events: ${JSON.stringify(context)}. 
-    Include the weather, today's schedule, key tasks, and a quick summary of missed notifications if any. Keep it under 150 words. Be natural and friendly (your name is Nova).
+    Include the weather, today's schedule, key tasks, and a quick summary of missed notifications if any. Keep it under 150 words. Be natural and friendly (your name is Maaya).
     Format the response as a single string of text. Do not use JSON formatting for this specific response, just plain text.`;
 
     try {
@@ -1666,7 +1666,7 @@ app.get('/api/briefing/:userId', verifyToken, async (req, res) => {
       console.error('Briefing AI Error:', aiError);
       const taskCount = tasks.length;
       const notifCount = notifications.length;
-      res.json({ briefing: `Nova here! You have ${taskCount} pending tasks and ${notifCount} new notifications. (I'm having a bit of trouble connecting to my AI brain for a detailed summary, but I'm still watching over things!)` });
+      res.json({ briefing: `Maaya here! You have ${taskCount} pending tasks and ${notifCount} new notifications. (I'm having a bit of trouble connecting to my AI brain for a detailed summary, but I'm still watching over things!)` });
     }
 
   } catch (error) {

@@ -110,7 +110,7 @@ const AssistantFaceCard = ({ onPress, theme, scrollY }: { onPress: () => void, t
             </View>
           </View>
           <View style={styles.faceTextContainer}>
-            <Text style={styles.faceTitle}>Nova Voice</Text>
+            <Text style={styles.faceTitle}>Maaya Voice</Text>
             <Text style={styles.faceSubtitle}>Tap to speak with your assistant</Text>
           </View>
         </MotiView>
@@ -198,7 +198,7 @@ export const DashboardScreen = ({
         pointerEvents={scrollYState > 60 ? 'auto' : 'none'}
       >
         <View style={styles.stickyHeaderContent}>
-          <Text style={[styles.stickyTitle, { color: theme.text }]}>Nova Dashboard</Text>
+          <Text style={[styles.stickyTitle, { color: theme.text }]}>Maaya Dashboard</Text>
           <OrbStatus status={backendStatus} theme={theme} />
         </View>
       </Animated.View>
@@ -232,7 +232,7 @@ export const DashboardScreen = ({
           >
             <OrbStatus status={backendStatus} theme={theme} />
             <Text style={[styles.statusText, { color: theme.textSecondary }]}>
-              {backendLoading ? 'Syncing...' : 'Nova Online'}
+              {backendLoading ? 'Syncing...' : 'Maaya Online'}
             </Text>
           </TouchableOpacity>
         </View>

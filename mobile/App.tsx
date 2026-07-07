@@ -26,6 +26,7 @@ import { ContactsScreen } from './src/screens/ContactsScreen';
 import { BriefingScreen } from './src/screens/BriefingScreen';
 import { ProfileScreen } from './src/screens/ProfileScreen';
 import { TasksScreen } from './src/screens/TasksScreen';
+import MaayaScreen from './src/assistant/MaayaScreen';
 import { HomeIcon, MessageIcon, MicIcon, BrainIcon, ProfileIcon } from './src/components/Icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { setupNotificationListener, requestNotificationPermission } from './src/services/NotificationService';
@@ -55,7 +56,7 @@ const App = (): React.JSX.Element => {
   // Force Dark Theme for Premium SaaS feel by default, but allow system/light overrides if explicitly set later
   const isDarkMode = themeMode === 'system' ? true : themeMode === 'dark'; 
   const activeTheme = isDarkMode ? themes.dark : themes.light;
-  const BASE_URL = 'http://192.168.0.104:5000';
+  const BASE_URL = 'http://192.168.0.102:5000';
 
   const fetchBriefing = async (userId: number) => {
     setBriefingLoading(true);
@@ -224,6 +225,13 @@ const App = (): React.JSX.Element => {
                   {(props) => <ChatScreen {...props} user={user} theme={activeTheme} baseUrl={BASE_URL} onBack={() => props.navigation.goBack()} />}
                 </Tab.Screen>
                 
+                <Tab.Screen 
+                  name="Maaya (V1)" 
+                  options={{ tabBarIcon: ({ color }) => <MicIcon color={color} size={24} /> }}
+                >
+                  {(props) => <MaayaScreen baseUrl={BASE_URL} />}
+                </Tab.Screen>
+
                 <Tab.Screen 
                   name="Voice" 
                   options={{ tabBarIcon: ({ color }) => <MicIcon color={color} size={24} /> }}

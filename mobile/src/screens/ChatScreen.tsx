@@ -169,7 +169,7 @@ export const ChatScreen = ({ user, theme, baseUrl, onBack }: ChatScreenProps) =>
           <Text style={[styles.backText, { color: theme.primary }]}>←</Text>
         </TouchableOpacity>
         <View style={styles.headerInfo}>
-          <Text style={[styles.headerTitle, { color: theme.text }]}>Nova Assistant</Text>
+          <Text style={[styles.headerTitle, { color: theme.text }]}>Maaya Assistant</Text>
           <View style={styles.onlineStatus}>
             <View style={[styles.statusDot, { backgroundColor: theme.success }]} />
             <Text style={[styles.statusText, { color: theme.textSecondary }]}>Online</Text>
@@ -206,7 +206,7 @@ export const ChatScreen = ({ user, theme, baseUrl, onBack }: ChatScreenProps) =>
         <View style={[styles.pillInput, { backgroundColor: theme.card, borderColor: theme.border }]}>
           <TextInput
             style={[styles.textInput, { color: theme.text }]}
-            placeholder="Talk to Nova..."
+            placeholder="Talk to Maaya..."
             placeholderTextColor={theme.textSecondary}
             value={inputText}
             onChangeText={setInputText}

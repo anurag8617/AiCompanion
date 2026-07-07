@@ -53,7 +53,7 @@ async def process_stt_stream(audio_chunk: bytes) -> str:
 # =====================================================================
 async def analyze_emotion(text: str) -> dict:
     """
-    Analyzes the emotional tone of the user's text to adjust Nova's response.
+    Analyzes the emotional tone of the user's text to adjust Maaya's response.
     """
     if not text.strip():
         return {"dominant_emotion": "neutral", "aggression": 0.0, "confidence": 0.5}
@@ -100,7 +100,7 @@ async def generate_llm_response(text: str, emotion_data: dict) -> str:
         if memory_str:
             memory_str = f"\n\nRELEVANT PAST MEMORIES:\n{memory_str}"
 
-        system_prompt = f"""You are Nova, an advanced AI executive assistant. 
+        system_prompt = f"""You are Maaya, an advanced AI executive assistant. 
 The user's current detected emotion is: {emotion_data.get('dominant_emotion', 'neutral')}. 
 Keep your response concise, helpful, and conversational.
 {memory_str}

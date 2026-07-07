@@ -203,7 +203,7 @@ export const VoiceSessionDetailScreen = ({ user, theme, baseUrl, route, navigati
         <View style={[styles.pillInput, { backgroundColor: theme.card, borderColor: theme.border }]}>
           <TextInput
             style={[styles.textInput, { color: theme.text }]}
-            placeholder="Talk to Nova..."
+            placeholder="Talk to Maaya..."
             placeholderTextColor={theme.textSecondary}
             value={inputText}
             onChangeText={setInputText}

@@ -74,7 +74,7 @@ emotional understanding
 Real-Life Usage Example
 Morning Routine
 The user says:
-“Hey Nova, summarize my day.”
+“Hey Maaya, summarize my day.”
 The AI responds:
 You slept 5 hours 48 minutes
 You have 4 meetings today
